@@ -1,0 +1,13 @@
+<script src="https://mcapi.us/scripts/minecraft.js"></script>
+<div class="server-status">
+    Metrics users <span class="server-online"></span>!
+</div>
+  
+<script>
+    MinecraftAPI.getServerStatus('40.121.160.118', {
+      port: 25565
+    }, function (err, data) {
+      console.log(data)
+      document.querySelector('.server-online').innerHTML = data.players.now;
+    });
+</script>
